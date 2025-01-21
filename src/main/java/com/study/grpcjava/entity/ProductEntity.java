@@ -1,5 +1,6 @@
 package com.study.grpcjava.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,5 +36,6 @@ public class ProductEntity {
 
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
+    @JsonBackReference
     private CategoryEntity category;
 }

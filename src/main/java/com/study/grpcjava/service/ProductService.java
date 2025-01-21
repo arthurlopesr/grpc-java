@@ -5,6 +5,8 @@ import com.study.grpcjava.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProductService {
@@ -13,5 +15,9 @@ public class ProductService {
 
     public ProductEntity add(ProductEntity product) {
         return productRepository.save(product);
+    }
+
+    public List<ProductEntity> getAll() {
+        return productRepository.findAll();
     }
 }

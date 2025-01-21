@@ -1,5 +1,6 @@
 package com.study.grpcjava.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,5 +26,6 @@ public class CategoryEntity {
     private String name;
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+    @JsonBackReference
     private List<ProductEntity> products;
 }
